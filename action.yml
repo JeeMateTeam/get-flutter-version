@@ -1,5 +1,8 @@
-name: 'Get Flutter Build Version'
+name: 'Flutter Pubspec App Version'
 description: 'Extract flutter version number and build number from pubspec.yaml'
+branding:
+  icon: play
+  color: red
 author: 'JeeMateTeam'
 outputs:
   version:
