@@ -1,9 +1,9 @@
 import * as core from '@actions/core'
 import {join} from 'path'
 import {readFile} from 'fs'
-import yaml from 'js-yaml'
+import {load as loadYaml} from 'js-yaml'
 
-type safeLoadType = string | object | undefined
+type safeLoadType = string | object | undefined | unknown
 
 interface Pubspec {
   version?: string
@@ -13,7 +13,8 @@ async function run(): Promise<void> {
   try {
     await getFlutterVersion()
   } catch (error) {
-    core.setFailed(error.message)
+    const err = error as Error
+    core.setFailed(err.message)
   }
 }
 
@@ -57,5 +58,5 @@ async function readYamlFile(file: string): Promise<safeLoadType> {
       }
     })
   )
-  return yaml.safeLoad(fileData)
+  return loadYaml(fileData)
 }
