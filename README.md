@@ -2,6 +2,7 @@
 
 Get flutter verion number and build number from pubspec.yaml
 
+
 ### Outputs
 
 - `version_number`: The flutter version number in pubspect.yaml
