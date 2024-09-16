@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get flutter version
         id: get_flutter_version
-        uses: its404/get-flutter-version@v1.0.0
+        uses: JeeMateTeam/get-flutter-version@v2.0.0
       - name: Output flutter version
         run: echo 'version_number:' ${{ steps.get_flutter_version.outputs.version_number }} ' build_number:' ${{ steps.get_flutter_version.outputs.build_number }}
 ```
